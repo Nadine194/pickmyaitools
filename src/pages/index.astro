@@ -1,0 +1,190 @@
+---
+import Layout from '../components/Layout.astro';
+
+---
+<Layout
+  title="PickMyAITools - Find the Right AI Tool for Your Needs"
+  description="Clear, practical guidance to help you choose the right AI tools. Compare options, explore use cases, and find tools that fit your needs and budget."
+  keywords={['AI tools', 'AI tool selector', 'AI tool guide', 'choose AI tools', 'AI tool recommendations']}
+>
+  <div class="container mx-auto px-4">
+    <!-- Hero Section -->
+    <section class="text-center py-16 md:py-24 container-page">
+      <h1 class="heading-1 mb-5 md:mb-6 mx-auto">
+        Find the Right AI Tool for Your Needs
+      </h1>
+      <p class="body-lead mb-10 mx-auto text-lg">
+        Choosing an AI tool can feel overwhelming with hundreds of options available. We help you cut through the noise by providing clear, practical guidance based on what you're actually trying to accomplish—not marketing claims.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <a
+          href="/guides/which-ai-tool-should-i-use"
+          class="btn-primary-soft font-sans font-normal text-sm"
+        >
+          Find My AI Tool
+        </a>
+        <a
+          href="/use-cases"
+          class="link-soft font-sans font-normal text-sm"
+        >
+          Browse Use Cases
+        </a>
+      </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="section-pad max-w-4xl mx-auto border-t border-white/10">
+      <h2 class="heading-2 mb-4 md:mb-5 text-center mx-auto">
+        What We Do
+      </h2>
+      <p class="body-muted mb-6 mt-4 text-lg">
+        PickMyAITools provides clear, practical guidance to help you choose AI tools that actually fit your needs. We focus on explaining what different types of AI tools do, who they're designed for, and how to match tools to your specific situation—whether you're a beginner, small business owner, freelancer, or professional looking to work more efficiently.
+      </p>
+      <p class="body-muted mb-6 text-lg">
+        Our approach is straightforward: we explain what AI tools can realistically accomplish, help you understand which types of tools address your specific challenges, and provide guidance on choosing options that fit your experience level and budget. We don't recommend tools based on popularity or features—we focus on what actually helps you accomplish your goals.
+      </p>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="section-pad max-w-4xl mx-auto border-t border-white/10">
+      <h2 class="heading-2 mb-4 md:mb-5 text-center mx-auto">
+        Who This Is For
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-6">
+        <div class="border-b border-white/10 pb-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Beginners Exploring AI</h3>
+          <p class="text-gray-400 leading-relaxed">
+            If you're new to AI tools or feel overwhelmed by options, we provide clear explanations and guidance to help you get started without technical jargon or assumptions about what you already know.
+          </p>
+        </div>
+        <div class="border-b border-white/10 pb-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Small Business Owners</h3>
+          <p class="text-gray-400 leading-relaxed">
+            For business owners juggling multiple roles, we help identify AI tools that save time on operational tasks without requiring technical expertise or large budgets.
+          </p>
+        </div>
+        <div class="border-b border-white/10 pb-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Professionals & Freelancers</h3>
+          <p class="text-gray-400 leading-relaxed">
+            If you're looking to work more efficiently or handle specific tasks like content creation, customer support, or project management, we help match tools to your actual workflow needs.
+          </p>
+        </div>
+        <div class="border-b border-white/10 pb-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Anyone Choosing AI Tools</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Whether you're comparing options, exploring use cases, or trying to understand what AI tools can do for your situation, we provide practical guidance to help you make informed decisions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use This Site -->
+    <section class="section-pad max-w-4xl mx-auto border-t border-white/10">
+      <h2 class="heading-2 mb-4 md:mb-5 text-center mx-auto">
+        How to Use This Site
+      </h2>
+      <div class="space-y-8 mt-6">
+        <div class="border-l border-white/10 pl-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Start With the Tool Selector</h3>
+          <p class="text-gray-400 leading-relaxed">
+            Not sure where to begin? Our <a href="/guides/which-ai-tool-should-i-use" class="text-gray-300 hover:text-gray-100 underline-offset-4 hover:underline">AI Tool Selector guide</a> helps you identify the right type of tool based on what you're trying to accomplish, your experience level, and your budget.
+          </p>
+        </div>
+        <div class="border-l border-white/10 pl-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Explore Use Cases</h3>
+          <p class="text-gray-400 leading-relaxed">
+            If you know what you need help with—content writing, marketing, customer support, or other specific tasks—browse our <a href="/use-cases" class="text-gray-300 hover:text-gray-100 underline-offset-4 hover:underline">use case guides</a> to find tools designed for those specific challenges.
+          </p>
+        </div>
+        <div class="border-l border-white/10 pl-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Read Getting Started Guides</h3>
+          <p class="text-gray-400 leading-relaxed">
+            New to AI tools? Our <a href="/guides/ai-tools-for-beginners" class="text-gray-300 hover:text-gray-100 underline-offset-4 hover:underline">beginners guide</a> explains the basics and helps you understand what to expect from AI tools without assuming technical knowledge.
+          </p>
+        </div>
+        <div class="border-l border-white/10 pl-8">
+          <h3 class="text-xl font-sans font-normal mb-4 text-gray-100">Compare Options</h3>
+          <p class="text-gray-400 leading-relaxed">
+            When you're deciding between specific tools, our <a href="/comparisons" class="text-gray-300 hover:text-gray-100 underline-offset-4 hover:underline">comparison guides</a> provide detailed, side-by-side analysis to help you understand differences and choose what fits your needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="section-pad border-t border-white/10">
+      <h2 class="heading-2 mb-4 md:mb-5 text-center mx-auto max-w-4xl">
+        Quick Links
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mt-6">
+        <div class="card-soft">
+          <h3 class="card-title mb-4">Use Cases</h3>
+          <p class="body-muted mb-6 text-sm">
+            Find AI tools tailored to specific tasks like content writing, marketing, customer support, and more.
+          </p>
+          <a href="/use-cases" class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Explore Use Cases →
+          </a>
+        </div>
+        <div class="card-soft">
+          <h3 class="card-title mb-4">Comparisons</h3>
+          <p class="body-muted mb-6 text-sm">
+            Detailed side-by-side comparisons to help you understand differences between popular AI tools.
+          </p>
+          <a href="/comparisons" class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            View Comparisons →
+          </a>
+        </div>
+        <div class="card-soft">
+          <h3 class="card-title mb-4">Guides</h3>
+          <p class="body-muted mb-6 text-sm">
+            Comprehensive guides to help you understand AI tools, choose the right solutions, and get started.
+          </p>
+          <a href="/guides" class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read Guides →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section-pad max-w-3xl mx-auto border-t border-white/10 text-center">
+      <h2 class="heading-2 mb-4 md:mb-5">
+        Ready to find your AI tool?
+      </h2>
+      <p class="body-muted mb-8">
+        Start with our comprehensive guide to identify the right AI tool for your needs.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+        <a
+          href="/guides/which-ai-tool-should-i-use"
+          class="btn-primary-soft font-sans font-normal text-sm"
+        >
+          Find My AI Tool
+        </a>
+        <a
+          href="/guides/ai-tools-for-beginners"
+          class="link-soft font-sans font-normal text-sm"
+        >
+          Getting Started Guide
+        </a>
+      </div>
+    </section>
+
+    <!-- Affiliate Disclosure -->
+    <section class="section-pad max-w-4xl mx-auto border-t border-white/10">
+      <h2 class="text-xl font-serif-display font-normal mb-4 md:mb-5 text-gray-100">
+        Affiliate Disclosure
+      </h2>
+      <p class="body-muted mb-4">
+        Some links on this website may be affiliate links, which means we may earn a commission if you choose to purchase through them. This comes at no additional cost to you and helps support the maintenance of this resource.
+      </p>
+      <p class="body-muted mb-4">
+        We only recommend tools and services we believe are genuinely useful, and all opinions expressed here are our own. Our goal is to provide helpful guidance, not to promote specific products.
+      </p>
+      <p class="body-muted">
+        For more information, please see our <a href="/affiliate-disclaimer" class="text-gray-300 hover:text-gray-100 underline-offset-4 hover:underline">full affiliate disclaimer</a>.
+      </p>
+    </section>
+  </div>
+</Layout>

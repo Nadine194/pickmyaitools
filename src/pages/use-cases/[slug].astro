@@ -1,0 +1,29 @@
+---
+import ContentPage from '../../layouts/ContentPage.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', ({ data }) => 
+    data.section === 'use-cases' && !data.draft
+  );
+  
+  return pages.map((page) => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+---
+
+<ContentPage
+  title={page.data.title}
+  description={page.data.description}
+  section={page.data.section}
+  slug={page.slug}
+  updated={page.data.updated}
+  keywords={page.data.keywords}
+>
+  <Content />
+</ContentPage>

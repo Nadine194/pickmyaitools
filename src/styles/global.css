@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-gray-300 antialiased bg-gray-900;
+  }
+  
+  h1, h2 {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl leading-tight text-gray-100;
+    max-width: 42rem;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug text-gray-100;
+    max-width: 40rem;
+  }
+  
+  h3, h4, h5, h6 {
+    font-family: Inter, system-ui, sans-serif;
+    font-weight: 400;
+  }
+  
+  h3 {
+    @apply text-2xl leading-relaxed;
+  }
+  
+  a {
+    @apply transition-colors;
+    color: #8b9db5;
+  }
+  
+  a:hover {
+    color: #6b7f99;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color 0.2s;
+  }
+  
+  a:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply text-gray-300 leading-relaxed;
+  }
+  
+  .prose h1 {
+    @apply text-4xl md:text-5xl mb-8 mt-12 leading-tight;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    max-width: 42rem;
+  }
+  
+  .prose h2 {
+    @apply text-3xl md:text-4xl mb-6 mt-12 leading-snug;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    max-width: 40rem;
+  }
+  
+  .prose h3 {
+    @apply text-2xl mb-4 mt-8 leading-relaxed;
+    font-family: Inter, system-ui, sans-serif;
+    font-weight: 400;
+  }
+  
+  .prose h4 {
+    @apply text-xl mb-3 mt-6 font-sans font-normal;
+  }
+  
+  .prose p {
+    @apply mb-6 leading-relaxed text-gray-300;
+  }
+  
+  .prose ul, .prose ol {
+    @apply mb-6 pl-6;
+  }
+  
+  .prose ul {
+    @apply list-disc;
+  }
+  
+  .prose ol {
+    @apply list-decimal;
+  }
+  
+  .prose li {
+    @apply mb-3 text-gray-300;
+  }
+  
+  .prose strong {
+    @apply font-normal text-gray-100;
+  }
+  
+  .prose code {
+    @apply px-2 py-1 rounded text-sm font-mono;
+    background-color: rgba(30, 41, 59, 0.6); /* slate-800/60 */
+    color: #8b9db5;
+  }
+  
+  .prose pre {
+    @apply p-4 rounded-lg overflow-x-auto mb-6 text-gray-300;
+    background-color: rgba(30, 41, 59, 0.6); /* slate-800/60 */
+  }
+  
+  .prose blockquote {
+    @apply pl-6 italic my-6 text-gray-400;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  .prose a {
+    color: #8b9db5;
+  }
+  
+  .prose a:hover {
+    color: #6b7f99;
+  }
+
+  /* Design System Utility Classes */
+  .heading-1 {
+    font-family: "DM Serif Display", serif;
+    @apply font-normal tracking-tight leading-tight text-gray-100 text-4xl md:text-5xl;
+    max-width: 48rem; /* max-w-3xl */
+  }
+
+  .heading-2 {
+    font-family: "DM Serif Display", serif;
+    @apply font-normal tracking-tight leading-tight text-gray-100 text-2xl md:text-3xl;
+  }
+
+  .body-lead {
+    @apply text-gray-300 leading-relaxed;
+    max-width: 42rem; /* max-w-2xl */
+  }
+
+  .container-page {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  .section-pad {
+    @apply py-14 md:py-20;
+  }
+
+  .card-soft {
+    @apply bg-slate-800/60 border border-white/15 rounded-2xl p-6 md:p-7;
+  }
+
+  .card-title {
+    @apply text-gray-100 font-medium;
+  }
+
+  .body-muted {
+    @apply text-gray-300 leading-relaxed;
+  }
+
+  .link-soft {
+    @apply text-gray-300 underline-offset-4 hover:text-gray-100;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.2);
+    transition: text-decoration-color 0.2s;
+  }
+
+  .link-soft:hover {
+    text-decoration-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-primary-soft {
+    @apply rounded-xl px-5 py-3 text-gray-100 transition-colors;
+    background-color: rgba(255, 255, 255, 0.08); /* bg-white/8 */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* border-white/15 */
+  }
+  
+  .btn-primary-soft:hover {
+    background-color: rgba(255, 255, 255, 0.12); /* hover:bg-white/12 */
+    border-color: rgba(255, 255, 255, 0.2); /* hover:border-white/20 */
+  }
+}

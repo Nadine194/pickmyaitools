@@ -1,0 +1,33 @@
+---
+interface Props {
+  headers: string[];
+  rows: Array<Array<string | number | boolean>>;
+}
+
+const { headers, rows } = Astro.props;
+---
+
+<div class="overflow-x-auto my-12">
+  <table class="min-w-full border-collapse border border-white/15">
+    <thead>
+      <tr class="bg-slate-800/60">
+        {headers.map((header) => (
+          <th class="border border-white/15 px-4 py-3 text-left font-sans font-normal text-gray-100">
+            {header}
+          </th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr class="hover:bg-slate-800/40 transition-colors">
+          {row.map((cell) => (
+            <td class="border border-white/15 px-4 py-3 text-gray-300">
+              {typeof cell === 'boolean' ? (cell ? '✓' : '✗') : String(cell)}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

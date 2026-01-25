@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  class?: string;
+}
+
+const { href, label, class: className = '' } = Astro.props;
+const trackingUrl = href.includes('?') 
+  ? `${href}&ref=pickmyaitools` 
+  : `${href}?ref=pickmyaitools`;
+---
+
+<a
+  href={trackingUrl}
+  rel="nofollow sponsored noopener"
+  target="_blank"
+  class={`text-blue-600 hover:text-blue-800 underline transition-colors ${className}`}
+>
+  {label}
+</a>

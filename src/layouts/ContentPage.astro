@@ -1,0 +1,63 @@
+---
+import Layout from '../components/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+import RelatedPages from '../components/RelatedPages.astro';
+import { getCollection } from 'astro:content';
+
+interface Props {
+  title: string;
+  description: string;
+  section: string;
+  slug: string;
+  updated: Date;
+  keywords: string[];
+}
+
+const { title, description, section, slug, updated, keywords } = Astro.props;
+
+const sectionLabels: Record<string, string> = {
+  'use-cases': 'Use Cases',
+  'comparisons': 'Comparisons',
+  'guides': 'Guides',
+};
+
+const sectionPath = `/${section}`;
+const breadcrumbs = [
+  { label: 'Home', url: '/' },
+  { label: sectionLabels[section] || section, url: sectionPath },
+  { label: title, url: '' },
+];
+
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(updated);
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonical={`${sectionPath}/${slug}`}
+>
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <Breadcrumbs items={breadcrumbs} />
+    
+    <article>
+      <header class="mb-12">
+        <h1 class="font-serif-display font-normal mb-6">{title}</h1>
+        <p class="text-gray-500 text-sm">Last updated: {formattedDate}</p>
+      </header>
+
+      <div class="prose prose-lg max-w-none">
+        <slot />
+      </div>
+
+      <AffiliateDisclosure />
+    </article>
+
+    <RelatedPages currentSlug={slug} currentSection={section} />
+  </div>
+</Layout>

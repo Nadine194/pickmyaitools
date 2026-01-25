@@ -1,0 +1,42 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="mb-8">
+  <ol class="flex items-center space-x-2 text-sm text-gray-500">
+    {items.map((item, index) => (
+      <>
+        {index > 0 && <span class="text-gray-600">/</span>}
+        <li>
+          {index === items.length - 1 ? (
+            <span class="text-gray-300 font-sans font-normal">{item.label}</span>
+          ) : (
+            <a href={item.url} class="text-gray-400 hover:text-gray-200 transition-colors font-sans">
+              {item.label}
+            </a>
+          )}
+        </li>
+      </>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    "item": item.url.startsWith('http') ? item.url : `https://pickmyaitools.com${item.url}`
+  }))
+})} />

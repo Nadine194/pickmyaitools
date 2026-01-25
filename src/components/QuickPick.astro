@@ -1,0 +1,26 @@
+---
+import AffiliateLink from './AffiliateLink.astro';
+
+interface Props {
+  toolName: string;
+  toolLink: string;
+  reason: string;
+}
+
+const { toolName, toolLink, reason } = Astro.props;
+---
+
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-lg p-6 my-8">
+  <div class="flex items-start gap-4">
+    <div class="flex-shrink-0">
+      <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <div class="flex-1">
+      <h3 class="text-xl font-bold mb-2">Quick Pick: {toolName}</h3>
+      <p class="text-gray-700 mb-4">{reason}</p>
+      <AffiliateLink href={toolLink} label={`Try ${toolName} →`} class="font-semibold text-lg" />
+    </div>
+  </div>
+</div>

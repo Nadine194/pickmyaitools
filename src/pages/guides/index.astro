@@ -1,0 +1,54 @@
+---
+import Layout from '../../components/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const pages = await getCollection('pages', ({ data }) => {
+  return data.section === 'guides' && !data.draft;
+});
+
+const sortedPages = pages.sort((a, b) => 
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<Layout
+  title="AI Tool Guides - PickMyAITools"
+  description="Comprehensive guides to help you understand AI tools, choose the right solutions, and get started with AI technology."
+  keywords={['AI tool guides', 'AI tool tutorials', 'how to choose AI tools', 'AI tool selector']}
+  canonical="/guides"
+>
+  <div class="container mx-auto px-4">
+    <header class="section-pad container-page">
+      <h1 class="heading-1 mb-5 md:mb-6">
+        AI Tool Guides
+      </h1>
+      <p class="body-lead text-lg">
+        Comprehensive guides to help you understand and choose the right AI tools for your needs.
+      </p>
+    </header>
+
+    <div class="container-page pb-14 md:pb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {sortedPages.map((page) => {
+          const url = `/guides/${page.slug}`;
+          return (
+            <a
+              href={url}
+              class="card-soft hover:bg-slate-800/70 transition-colors block"
+            >
+              <h2 class="card-title mb-4">{page.data.title}</h2>
+              <p class="body-muted text-sm mb-4">{page.data.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {page.data.keywords.slice(0, 3).map((keyword) => (
+                  <span class="text-xs bg-white/5 text-gray-400 px-2 py-1 rounded-sm">
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</Layout>
