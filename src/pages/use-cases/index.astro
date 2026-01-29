@@ -27,7 +27,52 @@ const sortedPages = pages.sort((a, b) =>
       </p>
     </header>
 
-    <div class="container-page pb-14 md:pb-20">
+    <!-- Most Popular Use Cases -->
+    <section class="section-pad border-t border-white/10">
+      <h2 class="heading-2 mb-4 md:mb-5 text-center mx-auto max-w-4xl">
+        Most Popular Use Cases
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mt-6">
+        <a
+          href="/use-cases/best-ai-tools-for-marketing"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">Best AI Tools for Marketing</h3>
+          <p class="body-muted text-sm mb-4">
+            Discover the top AI marketing tools to boost your campaigns, automate workflows, and drive better ROI.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+        <a
+          href="/use-cases/best-ai-tools-for-seo"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">Best AI Tools for SEO</h3>
+          <p class="body-muted text-sm mb-4">
+            Improve your search rankings with AI-powered SEO tools for keyword research, content optimization, and performance tracking.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+        <a
+          href="/use-cases/best-ai-tools-for-small-business"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">Best AI Tools for Small Business</h3>
+          <p class="body-muted text-sm mb-4">
+            Affordable AI tools that help small businesses automate tasks, improve productivity, and compete with larger companies.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container-page pb-14 md:pb-20 border-t border-white/10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {sortedPages.map((page) => {
           const url = `/use-cases/${page.slug}`;

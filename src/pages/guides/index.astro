@@ -27,7 +27,40 @@ const sortedPages = pages.sort((a, b) =>
       </p>
     </header>
 
-    <div class="container-page pb-14 md:pb-20">
+    <!-- Start Here -->
+    <section class="section-pad border-t border-white/10">
+      <h2 class="heading-2 mb-4 md:mb-5 text-center mx-auto max-w-4xl">
+        Start Here
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mt-6">
+        <a
+          href="/guides/which-ai-tool-should-i-use"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">Which AI Tool Should I Use?</h3>
+          <p class="body-muted text-sm mb-4">
+            Find the perfect AI tool for your needs with our free selector guide. Compare use cases, features, and get personalized recommendations.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+        <a
+          href="/guides/ai-tools-for-beginners"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">AI Tools for Beginners</h3>
+          <p class="body-muted text-sm mb-4">
+            Start your AI journey with these beginner-friendly tools. No experience required - perfect for those new to AI technology.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container-page pb-14 md:pb-20 border-t border-white/10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {sortedPages.map((page) => {
           const url = `/guides/${page.slug}`;

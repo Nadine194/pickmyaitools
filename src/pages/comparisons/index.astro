@@ -27,7 +27,52 @@ const sortedPages = pages.sort((a, b) =>
       </p>
     </header>
 
-    <div class="container-page pb-14 md:pb-20">
+    <!-- High-Intent Comparisons -->
+    <section class="section-pad border-t border-white/10">
+      <h2 class="heading-2 mb-4 md:mb-5 text-center mx-auto max-w-4xl">
+        High-Intent Comparisons
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mt-6">
+        <a
+          href="/comparisons/clickup-vs-notion"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">ClickUp vs Notion</h3>
+          <p class="body-muted text-sm mb-4">
+            Compare ClickUp and Notion to find the best productivity tool for your team. Features, pricing, use cases, and recommendations.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+        <a
+          href="/comparisons/jasper-vs-writesonic"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">Jasper vs Writesonic</h3>
+          <p class="body-muted text-sm mb-4">
+            Detailed comparison of Jasper and Writesonic. Compare features, pricing, use cases, and find out which AI writing tool is right for you.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+        <a
+          href="/comparisons/surfer-vs-clearscope"
+          class="card-soft hover:bg-slate-800/70 transition-colors block"
+        >
+          <h3 class="card-title mb-3">Surfer SEO vs Clearscope</h3>
+          <p class="body-muted text-sm mb-4">
+            Compare Surfer SEO and Clearscope to find the best content optimization tool. Features, pricing, and use case recommendations.
+          </p>
+          <span class="text-gray-300 hover:text-gray-100 font-sans text-sm transition-colors underline-offset-4 hover:underline inline-block">
+            Read more →
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <div class="container-page pb-14 md:pb-20 border-t border-white/10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {sortedPages.map((page) => {
           const url = `/comparisons/${page.slug}`;
