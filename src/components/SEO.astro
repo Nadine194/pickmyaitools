@@ -6,6 +6,7 @@ interface Props {
   keywords?: string[];
   ogImage?: string;
   type?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   keywords = [],
   ogImage = '/og-default.jpg',
   type = 'website',
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = 'https://pickmyaitools.com';
@@ -47,6 +49,6 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
 <meta name="twitter:image" content={fullOgImage} />
 
 <!-- Additional SEO -->
-<meta name="robots" content="index, follow" />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
 <meta name="author" content="PickMyAITools" />
 <meta name="language" content="English" />

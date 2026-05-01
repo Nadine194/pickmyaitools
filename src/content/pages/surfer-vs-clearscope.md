@@ -12,6 +12,7 @@ keywords:
 affiliate: true
 featured: false
 draft: false
+noindex: true
 ---
 
 # Surfer SEO vs Clearscope: Which SEO Tool Is Better?

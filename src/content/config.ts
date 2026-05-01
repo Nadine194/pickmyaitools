@@ -12,6 +12,7 @@ const pagesCollection = defineCollection({
     affiliate: z.boolean().default(true),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),
+    noindex: z.boolean().default(false),
   }),
 });
 

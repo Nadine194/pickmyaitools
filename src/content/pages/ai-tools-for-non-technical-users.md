@@ -13,6 +13,7 @@ keywords:
 affiliate: true
 featured: false
 draft: false
+noindex: true
 ---
 
 # AI Tools for Non-Technical Users: Simple Tools That Don't Require Technical Skills
