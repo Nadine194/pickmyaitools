@@ -13,6 +13,7 @@ keywords:
 affiliate: true
 featured: false
 draft: false
+noindex: true
 ---
 
 # AI Tools That Save Time: Practical Ways to Reduce Busywork

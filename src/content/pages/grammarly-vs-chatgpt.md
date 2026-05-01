@@ -13,6 +13,7 @@ keywords:
 affiliate: true
 featured: false
 draft: false
+noindex: true
 ---
 
 # Grammarly vs ChatGPT for Writing

@@ -13,6 +13,7 @@ keywords:
 affiliate: true
 featured: false
 draft: false
+noindex: true
 ---
 
 # Affordable AI Tools Under $50: Useful Options Without a High Monthly Cost

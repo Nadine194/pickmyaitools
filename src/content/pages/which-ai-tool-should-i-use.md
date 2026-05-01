@@ -13,6 +13,7 @@ keywords:
 affiliate: true
 featured: true
 draft: false
+noindex: true
 ---
 
 # Which AI Tool Should I Use?

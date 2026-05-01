@@ -13,6 +13,7 @@ keywords:
 affiliate: true
 featured: false
 draft: false
+noindex: true
 ---
 
 # Canva vs Adobe Express: Which Design Tool Is Better?

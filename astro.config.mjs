@@ -7,7 +7,9 @@ export default defineConfig({
   site: 'https://pickmyaitools.com',
   integrations: [
     tailwind(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !/\/(use-cases|comparisons|guides)\/[^/]+\/?$/.test(page),
+    }),
   ],
   output: 'static',
 });

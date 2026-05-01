@@ -12,9 +12,10 @@ interface Props {
   slug: string;
   updated: Date;
   keywords: string[];
+  noindex?: boolean;
 }
 
-const { title, description, section, slug, updated, keywords } = Astro.props;
+const { title, description, section, slug, updated, keywords, noindex = false } = Astro.props;
 
 const sectionLabels: Record<string, string> = {
   'use-cases': 'Use Cases',
@@ -41,6 +42,7 @@ const formattedDate = new Intl.DateTimeFormat('en-US', {
   description={description}
   keywords={keywords}
   canonical={`${sectionPath}/${slug}`}
+  noindex={noindex}
 >
   <div class="container mx-auto px-4 py-12 max-w-4xl">
     <Breadcrumbs items={breadcrumbs} />

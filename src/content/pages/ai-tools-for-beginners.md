@@ -13,6 +13,7 @@ keywords:
 affiliate: true
 featured: false
 draft: false
+noindex: true
 ---
 
 # AI Tools for Beginners: How to Get Started Without Feeling Overwhelmed
