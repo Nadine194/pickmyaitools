@@ -1,0 +1,104 @@
+---
+import Layout from '../components/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  review: CollectionEntry<'reviews'>;
+}
+
+const { review } = Astro.props;
+const data = review.data;
+const url = `/reviews/${review.slug}`;
+
+const testedDate = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(data.tested);
+
+const breadcrumbs = [
+  { label: 'Home', url: '/' },
+  { label: 'Reviews', url: '/reviews' },
+  { label: data.title, url: '' },
+];
+
+const summary = [
+  { label: 'Best for', value: data.bestFor },
+  { label: 'Not for', value: data.notFor },
+  { label: 'Pricing', value: data.pricing },
+  { label: 'Free plan', value: data.freePlan ? 'Yes' : 'No' },
+  { label: 'Where your data lives', value: data.dataLocation },
+  { label: 'Test period', value: data.testPeriod },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  description: data.description,
+  dateModified: data.tested.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Nadine de Jong',
+    url: 'https://pickmyaitools.com/about',
+  },
+  about: {
+    '@type': 'SoftwareApplication',
+    name: data.tool,
+    url: data.toolUrl,
+    applicationCategory: data.category,
+  },
+};
+---
+
+<Layout
+  title={data.title}
+  description={data.description}
+  keywords={data.keywords}
+  canonical={url}
+  type="article"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <article>
+      <header class="mb-10">
+        <h1 class="font-serif-display font-normal mb-4">{data.title}</h1>
+        <p class="text-gray-500 text-sm">
+          Tested by <a href="/about">Nadine de Jong</a> · Last tested {testedDate}
+        </p>
+      </header>
+
+      <section class="card-soft mb-12">
+        <p class="text-gray-100 text-lg leading-relaxed mb-6">{data.verdict}</p>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-sm">
+          {summary.map((item) => (
+            <div>
+              <dt class="text-gray-500 mb-1">{item.label}</dt>
+              <dd class="text-gray-300">{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+        {data.affiliateUrl && (
+          <a
+            href={data.affiliateUrl}
+            target="_blank"
+            rel="nofollow sponsored noopener"
+            class="btn-primary-soft inline-block mt-6 text-sm"
+          >
+            Try {data.tool} →
+          </a>
+        )}
+      </section>
+
+      <div class="prose prose-lg max-w-none">
+        <slot />
+      </div>
+
+      {data.affiliateUrl && <AffiliateDisclosure />}
+    </article>
+  </div>
+</Layout>

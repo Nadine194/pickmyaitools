@@ -1,6 +1,9 @@
 ---
 import SEO from './SEO.astro';
+import { getCollection } from 'astro:content';
 import '../styles/global.css';
+
+const hasReviews = (await getCollection('reviews', ({ data }) => !data.draft)).length > 0;
 
 interface Props {
   title: string;
@@ -47,6 +50,13 @@ const {
             PickMyAITools
           </a>
           <ul class="hidden md:flex gap-8 items-center">
+            {hasReviews && (
+              <li>
+                <a href="/reviews" class="text-gray-300 hover:text-gray-100 transition-colors font-sans text-sm">
+                  Reviews
+                </a>
+              </li>
+            )}
             <li>
               <a href="/which-ai-tool-should-i-use" class="text-gray-300 hover:text-gray-100 transition-colors font-sans text-sm">
                 Tool Selector
@@ -59,6 +69,13 @@ const {
             </li>
           </ul>
           <ul class="flex md:hidden gap-4 items-center text-sm">
+            {hasReviews && (
+              <li>
+                <a href="/reviews" class="text-gray-300">
+                  Reviews
+                </a>
+              </li>
+            )}
             <li>
               <a href="/which-ai-tool-should-i-use" class="text-gray-300">
                 Selector
