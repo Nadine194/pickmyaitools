@@ -1,0 +1,41 @@
+---
+import Layout from '../../components/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const reviews = (await getCollection('reviews', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.tested.getTime() - a.data.tested.getTime()
+);
+---
+
+<Layout
+  title="Hands-on AI Tool Reviews - PickMyAITools"
+  description="AI tools tested the way I test software: real test cases, the bugs I found, and a GDPR check on where your data goes."
+  canonical="/reviews"
+  noindex={reviews.length === 0}
+>
+  <div class="container mx-auto px-4">
+    <header class="section-pad container-page">
+      <h1 class="heading-1 mb-5 md:mb-6">Hands-on AI Tool Reviews</h1>
+      <p class="body-lead text-lg">
+        Every tool here is tested the way I test software: real test cases, the
+        bugs I found, and a GDPR check on where your data goes.
+      </p>
+    </header>
+
+    <div class="container-page pb-14 md:pb-20">
+      {reviews.length === 0 ? (
+        <p class="body-muted">The first reviews are being tested right now. Check back soon.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          {reviews.map((review) => (
+            <a href={`/reviews/${review.slug}`} class="card-soft hover:bg-slate-800/70 transition-colors block">
+              <p class="text-xs text-gray-500 mb-2">{review.data.category}</p>
+              <h2 class="card-title mb-3">{review.data.title}</h2>
+              <p class="body-muted text-sm">{review.data.verdict}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>

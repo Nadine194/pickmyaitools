@@ -16,6 +16,29 @@ const pagesCollection = defineCollection({
   }),
 });
 
+const reviewsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    tool: z.string(),
+    toolUrl: z.string().url(),
+    category: z.string(),
+    verdict: z.string(),
+    bestFor: z.string(),
+    notFor: z.string(),
+    pricing: z.string(),
+    freePlan: z.boolean(),
+    dataLocation: z.string(),
+    testPeriod: z.string(),
+    tested: z.coerce.date(),
+    affiliateUrl: z.string().url().optional(),
+    keywords: z.array(z.string()).default([]),
+    draft: z.boolean().default(true),
+  }),
+});
+
 export const collections = {
   pages: pagesCollection,
+  reviews: reviewsCollection,
 };
